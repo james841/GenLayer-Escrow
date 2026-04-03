@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 AI-Powered Decentralized Escrow Platform
 
-## Getting Started
+## 📌 Overview
 
-First, run the development server:
+This project is an AI-powered decentralized escrow platform designed to enable secure and trustless transactions between buyers and sellers.
+
+It eliminates the need for third-party intermediaries by holding funds in escrow and releasing them only when predefined conditions are met. The system leverages AI-driven validation to intelligently verify transaction outcomes such as delivery confirmation or product authenticity.
+
+---
+
+## 🎯 Problem
+
+Online transactions often suffer from:
+
+* Fraud and scams
+* Lack of trust between buyers and sellers
+* Disputes without fair resolution systems
+
+---
+
+## 💡 Solution
+
+This platform introduces a smart escrow system that:
+
+* Holds funds securely during a transaction
+* Uses AI to validate transaction conditions
+* Releases or refunds funds based on verified outcomes
+
+---
+
+## ⚙️ How It Works
+
+1. Buyer initiates a transaction and deposits funds into escrow
+2. Seller delivers the product/service
+3. AI validates proof (e.g. delivery confirmation, product verification)
+4. Funds are released to the seller OR refunded to the buyer
+
+---
+
+## 🔥 Key Features
+
+* 🔐 Secure escrow payment system
+* 🤖 AI-powered transaction validation
+* 👤 User authentication (Supabase)
+* ⚡ Real-time database updates
+* 📦 Transaction tracking system
+* 🌐 Clean and responsive UI
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React / Next.js
+* **Backend:** Supabase
+* **Authentication:** Supabase Auth
+* **Database:** Supabase PostgreSQL
+* **AI Integration:** (OpenAI API or similar)
+* **Blockchain (Optional):** GenLayer
+
+---
+
+## 📷 Screenshots
+
+*Add screenshots of your app here*
+
+---
+
+## 🌍 Use Cases
+
+* E-commerce transactions
+* Freelance job payments
+* Digital product sales
+* Peer-to-peer marketplaces
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup environment variables
+
+Create a `.env.local` file and add:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+```
+
+### 4. Run the project
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔐 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* `NEXT_PUBLIC_SUPABASE_URL` – Supabase project URL
+* `NEXT_PUBLIC_SUPABASE_ANON_KEY` – Public API key
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧠 Future Improvements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Smart contract automation
+* Advanced dispute resolution system
+* Multi-chain support
+* Mobile app version
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 👨‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Afolayan Favour (Surely-Drill)**
+Full-stack Developer (React | Next.js | Supabase)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
