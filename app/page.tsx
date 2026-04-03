@@ -80,12 +80,18 @@ export default function Home() {
         address: CONTRACT_ADDRESS,
         functionName: "create_deal",
         args: [form.buyer, form.seller, form.amount, form.conditions],
-        value: 0n,
+        value: BigInt(0),
       });
       setStatus("Deal anchored on GenLayer! ✅");
       setStep("proof");
       fetchDeals();
-    } catch (e: any) { setStatus("Error: " + e.message); }
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setStatus("Error: " + error.message);
+      } else {
+        setStatus("Error: Unknown error");
+      }
+    }
     setLoading(false);
   }
 
@@ -97,13 +103,19 @@ export default function Home() {
         address: CONTRACT_ADDRESS,
         functionName: "submit_proof",
         args: [form.proof],
-        value: 0n,
+        value: BigInt(0),
       });
       await supabase.from("deals").update({ proof: form.proof, status: "proof_submitted" }).eq("id", currentDealId);
       setStatus("Proof finalized! ✅");
       setStep("evaluate");
       fetchDeals();
-    } catch (e: any) { setStatus("Error: " + e.message); }
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setStatus("Error: " + error.message);
+      } else {
+        setStatus("Error: Unknown error");
+      }
+    }
     setLoading(false);
   }
 
@@ -116,7 +128,7 @@ export default function Home() {
         address: CONTRACT_ADDRESS,
         functionName: "ai_evaluate",
         args: [],
-        value: 0n,
+        value: BigInt(0),
       });
       setStatus("Waiting for consensus... ⏳");
       await client.waitForTransactionReceipt({
@@ -137,7 +149,13 @@ export default function Home() {
       setStep("result");
       setStatus("");
       fetchDeals();
-    } catch (e: any) { setStatus("Error: " + e.message); }
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setStatus("Error: " + error.message);
+      } else {
+        setStatus("Error: Unknown error");
+      }
+    }
     setLoading(false);
   }
 
